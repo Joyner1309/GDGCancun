@@ -38,7 +38,7 @@ export default class Menu extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Content style={styles.contentBtn}>
+                <View style={styles.contentBtn}>
                 <Text style={styles.margin_top}>Que tipo de tramite quiere realizar?</Text>
                 <Picker
                     mode="dropdown"
@@ -56,12 +56,14 @@ export default class Menu extends Component {
                     <Picker.Item label="Acta de Adopciones" value="5" />
                     <Picker.Item label="Acta de Reconocimiento" value="6" />
                 </Picker>
+                    <View style={{position:'relative'}}>
                     <TouchableOpacity style={styles.btn_continueF}
                                       onPress={()=>this.irTramite()}
                     >
                         <Text style={styles.txtBtn}>Buscar</Text>
                     </TouchableOpacity>
-                </Content>
+                    </View>
+                </View>
             </View>
         );
     }
@@ -71,7 +73,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingHorizontal:15,
-        justifyContent: 'center',
+
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
         width: '100%',
@@ -88,11 +90,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#ff0000',
         borderRadius:5,
         marginTop:25,
-    },
-    txtBtn:{
-        paddingHorizontal:15,
+        position:'absolute',
+        right:0,paddingHorizontal:15,
         paddingVertical:10,
         textAlign:'center',
+
+    },
+    txtBtn:{
         color:'#fff',
     },
     margin_top:{
