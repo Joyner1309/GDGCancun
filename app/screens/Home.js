@@ -11,7 +11,7 @@ export default class Home extends Component {
         return (
             <View style={styles.container}>
                 <Image source={require("./../images/gobmxlogo.png")}style={styles.logo}/>
-                <Text style={styles.txt}>Bienvenido a esta aplicacion donde podras solicitar las siguentes actas:</Text>
+                <Text style={styles.txt}>Bienvenido a esta aplicacion donde podras solicitar una copia valida de tu Acta.</Text>
                 <TouchableOpacity
                                   style={styles.btn_continue}
                                   onPress={()=>this.props.navigation.navigate('MenuPage')}

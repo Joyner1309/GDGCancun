@@ -48,7 +48,7 @@ export default class Menu extends Component {
                     selectedValue={this.state.selected}
                     onValueChange={(itemValue, itemIndex) => this.setState({selected:itemValue})}
                 >
-                    <Picker.Item label="Seleccione Solicitud" />
+                    <Picker.Item label="Seleccione una Solicitud" />
                     <Picker.Item label="Acta de Nacimiento" value="1" />
                     <Picker.Item label="Acta de Defuncion" value="2" />
                     <Picker.Item label="Acta de Matrimonio" value="3" />
@@ -56,13 +56,11 @@ export default class Menu extends Component {
                     <Picker.Item label="Acta de Adopciones" value="5" />
                     <Picker.Item label="Acta de Reconocimiento" value="6" />
                 </Picker>
-                </Content>
-                <Content style={styles.contentBtn}>
-                <TouchableOpacity style={styles.btn_continueF}
-                                  onPress={()=>this.irTramite()}
-                >
-                    <Text style={styles.txtBtn}>Buscar</Text>
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.btn_continueF}
+                                      onPress={()=>this.irTramite()}
+                    >
+                        <Text style={styles.txtBtn}>Buscar</Text>
+                    </TouchableOpacity>
                 </Content>
             </View>
         );
@@ -89,7 +87,7 @@ const styles = StyleSheet.create({
         width: 80,
         backgroundColor: '#ff0000',
         borderRadius:5,
-        marginRight:0,
+        marginTop:25,
     },
     txtBtn:{
         paddingHorizontal:15,
