@@ -1,49 +1,104 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Image} from 'react-native';
+import {createStackNavigator} from 'react-navigation'
+import Home from "./app/screens/Home";
+import Matrimonio from "./app/screens/Matrimonio";
+import Divorcio from "./app/screens/Divorcio";
+import Reconocimiento from "./app/screens/Reconocimiento";
+import Menu from "./app/screens/Menu";
+import Adopciones from "./app/screens/Adopciones";
+import Defuncion from "./app/screens/Defuncion";
+import Nacimiento from "./app/screens/Nacimiento";
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
-type Props = {};
-export default class App extends Component<Props> {
+
+
+export default class App extends Component {
+    constructor(){
+        super();
+    }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+        <Navegation/>
     );
   }
 }
+const Navegation = createStackNavigator({
+    HomePage: {screen:Home,
+        navigationOptions: {
+            header: null,
+            gesturesEnabled: false
+        }},
+        MenuPage: {screen:Menu,
+        navigationOptions: {
+            headerStyle: {
+                backgroundColor: "#282a2b"
+            },
+                headerTitleStyle: {
+                    fontWeight: "bold",
+                    color: "#fff",
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+                },
+                headerTintColor: "#fff",
+            animationEnabled: true,
+            headerLeft: null,
+            title:'Inicio',
+            headerRight: (
+                <Image source={require("./app/images/gobmxlogoH.png")}/>
+            ),
+
+        }},
+    NacimientoPage: {screen:Nacimiento,
+        navigationOptions: {
+            header: null,
+            gesturesEnabled: false
+        }},
+        MenuPage: {screen:Menu,
+        navigationOptions: {
+            headerStyle: {
+                backgroundColor: "#282a2b"
+            },
+            headerTitleStyle: {
+                fontWeight: "bold",
+                color: "#fff",
+
+            },
+            headerTintColor: "#fff",
+            animationEnabled: true,
+            headerLeft: null,
+            title:'Inicio',
+            headerRight: (
+                <Image source={require("./app/images/gobmxlogoH.png")}/>
+            ),
+
+        }},
+
+    MatrimonioPage: {screen:Matrimonio,
+        navigationOptions: {
+            header: null,
+            gesturesEnabled: false
+        }},
+    DivorcioPage: {screen:Divorcio,
+        navigationOptions: {
+            header: null,
+            gesturesEnabled: false
+        }},
+    ReconocimientoPage: {screen:Reconocimiento,
+        navigationOptions: {
+            header: null,
+            gesturesEnabled: false
+        }},
+    AdopcionesPage: {screen:Adopciones,
+        navigationOptions: {
+            header: null,
+            gesturesEnabled: false
+        }},
+    DefuncionPage: {screen:Defuncion,
+        navigationOptions: {
+            header: null,
+            gesturesEnabled: false
+        }},
+
+},{initialRouteName: 'HomePage'});
+
