@@ -12,6 +12,7 @@ export default class Menu extends Component {
     }
 
     irTramite(){
+        console.log(this.state.selected);
         switch (this.state.selected){
             case '1':
                 this.props.navigation.navigate("NacimientoPage");
@@ -35,7 +36,6 @@ export default class Menu extends Component {
     }
 
     render() {
-        console.log(this.state.selected);
         return (
             <View style={styles.container}>
                 <Content style={styles.contentBtn}>
@@ -48,6 +48,7 @@ export default class Menu extends Component {
                     selectedValue={this.state.selected}
                     onValueChange={(itemValue, itemIndex) => this.setState({selected:itemValue})}
                 >
+                    <Picker.Item label="Seleccione Solicitud" />
                     <Picker.Item label="Acta de Nacimiento" value="1" />
                     <Picker.Item label="Acta de Defuncion" value="2" />
                     <Picker.Item label="Acta de Matrimonio" value="3" />
@@ -58,6 +59,7 @@ export default class Menu extends Component {
                 </Content>
                 <Content style={styles.contentBtn}>
                 <TouchableOpacity style={styles.btn_continueF}
+                                  onPress={()=>this.irTramite()}
                 >
                     <Text style={styles.txtBtn}>Buscar</Text>
                 </TouchableOpacity>

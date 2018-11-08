@@ -51,11 +51,6 @@ const Navegation = createStackNavigator({
         }},
     NacimientoPage: {screen:Nacimiento,
         navigationOptions: {
-            header: null,
-            gesturesEnabled: false
-        }},
-        MenuPage: {screen:Menu,
-        navigationOptions: {
             headerStyle: {
                 backgroundColor: "#282a2b"
             },
@@ -66,12 +61,10 @@ const Navegation = createStackNavigator({
             },
             headerTintColor: "#fff",
             animationEnabled: true,
-            headerLeft: null,
-            title:'Inicio',
+            title:'Acta de Nacimiento',
             headerRight: (
                 <Image source={require("./app/images/gobmxlogoH.png")}/>
             ),
-
         }},
 
     MatrimonioPage: {screen:Matrimonio,

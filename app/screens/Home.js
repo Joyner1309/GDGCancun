@@ -12,7 +12,7 @@ export default class Home extends Component {
             <View style={styles.container}>
                 <Image source={require("./../images/gobmxlogo.png")}style={styles.logo}/>
                 <Text style={styles.txt}>Bienvenido a esta aplicacion donde podras solicitar las siguentes actas:</Text>
-                <TouchableOpacity onPress={this._onPressButton}
+                <TouchableOpacity
                                   style={styles.btn_continue}
                                   onPress={()=>this.props.navigation.navigate('MenuPage')}
                 >
